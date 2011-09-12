@@ -1,6 +1,8 @@
 home directory
 ==============
 
+This is the `restart` branch, which is a clean break from my slightly unwieldy previous `homedir` project.
+
 All of this code I've basically cribbed from [Norm](http://marknormanfrancis.com/)'s [home directory](http://github.com/norm/homedir) project, except for the Emacs and Python bits.
 
 This is Norm's original README:
