@@ -12,10 +12,8 @@ done
 PR_NO_COLOUR="%{$terminfo[sgr0]%}"
 
 set_my_prompt() {
-    PROMPT="$PR_LIGHT_YELLOW%n$PR_LIGHT_WHITE $PR_LIGHT_GREEN%~ $PR_LIGHT_WHITE%# "
+    PROMPT="%n %~ %# "
 }
 
 set_my_prompt
 
-PATH=/opt/local/bin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/local/bin:$PATH
-MANPATH=/opt/local/share/man:/usr/local/git/man:$MANPATH
