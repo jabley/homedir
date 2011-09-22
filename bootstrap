@@ -1,0 +1,28 @@
+# -*- mode: sh -*-
+
+# This whole homedir depends on bash anyway,
+# so it's fine to make it a bash script
+
+local action="${1}"
+
+if [ -n "${action}" ]; then
+    # restore files
+    if [ -f ~/.bashrc.old ]; then
+        mv ~/.bashrc.old ~/.bashrc
+    fi
+    echo "Cleaned"
+    exit 0
+else
+    # first back up old stuff
+    if [ -f ~/.bashrc ]; then
+        mv ~/.bashrc ~/.bashrc.old
+    fi
+
+    # chain these - if one fails don't continue
+    local PWD=`pwd`
+    git submodule update --init &&
+    echo -n "source ${PWD}/bashrc" > ~/.bashrc
+
+    echo "Installed"
+    exit 0
+fi
