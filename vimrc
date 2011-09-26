@@ -70,6 +70,9 @@ set softtabstop=4
 
 autocmd Filetype c,cpp,h,python,html,css,js,xml,php,conf set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
+" we don't want anchors underlined
+let html_no_rendering=1
+
 if has('mouse')
     set mouse=a
 endif
