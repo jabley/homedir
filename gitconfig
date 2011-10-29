@@ -1,35 +1,36 @@
+# -*- mode: conf; indent-tabs-mode: t; tab-width: 4; -*-
 [color]
-        status = auto
-        diff = auto
-        branch = auto
-        showbranch = auto
+		status = auto
+		diff = auto
+		branch = auto
+		showbranch = auto
 [user]
-        name = Bradley Wright
-        email = brad@intranation.com
+		name = Bradley Wright
+		email = brad@intranation.com
 [alias]
-        co = checkout
-        st = status
-        l = log --decorate --name-status
-        graph = log --oneline --graph
+		co = checkout
+		st = status
+		l = log --decorate --name-status
+		graph = log --oneline --graph
 [branch]
-        autosetuprebase = always
+		autosetuprebase = always
 [push]
-        default = tracking
+		default = tracking
 # alias some common Git origins/endpoints
 # http://www.kernel.org/pub/software/scm/git/docs/git-clone.html
 [url "git@github.com:"]
-        insteadOf = "gh:"
-        pushInsteadOf = "github:"
-        pushInsteadOf = "git://github.com/"
+		insteadOf = "gh:"
+		pushInsteadOf = "github:"
+		pushInsteadOf = "git://github.com/"
 [url "git://github.com/"]
-        insteadOf = "github:"
+		insteadOf = "github:"
 [url "git@gist.github.com:"]
-        insteadOf = "gst:"
-        pushInsteadOf = "gist:"
-        pushInsteadOf = "git://gist.github.com/"
+		insteadOf = "gst:"
+		pushInsteadOf = "gist:"
+		pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
-        insteadOf = "gist:"
+		insteadOf = "gist:"
 [url "vcs@upload.ep.io:"]
-        insteadOf = "ep.io:"
+		insteadOf = "ep.io:"
 [url "git@heroku.com:"]
-	insteadOf = "heroku"
+		insteadOf = "heroku:"
