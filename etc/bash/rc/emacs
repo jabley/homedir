@@ -7,9 +7,13 @@
 # if we're on OS X, alias whatever Emacs I'm using
 emacsen=`find ~/Applications/ -name Emacs`
 if [ -n "$emacsen" ]; then
-    alias emacs="$emacsen -nw"
+    alias emacs="'$emacsen' -nw"
     local emacsclient=`find ~/Applications -name emacsclient`
-    alias vemacs="$emacsclient -c -n"
-    export EDITOR="$emacsclient -t"
-    export VISUAL="$emacsclient -c"
+    alias vemacs="'$emacsclient' -c -n"
+    export EDITOR="'$emacsclient' -t"
+    export VISUAL="'$emacsclient' -c"
+else
+    alias vemacs="emacsclient -c -n"
+    export EDITOR="emacsclient -t"
+    export VISUAL="emacsclient -c"
 fi
