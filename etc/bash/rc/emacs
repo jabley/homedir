@@ -4,11 +4,12 @@
 
 # Any Emacs environment config I require
 
-# if we're on OS X, alias whatever Emacs I'm using
-emacsen=`find ~/Applications/ -name Emacs`
+# if we're on OS X, alias whatever Emacs I'm using,
+# although we only want exactly one result
+emacsen=`find ~/Applications/ -name Emacs | head -n 1`
 if [ -n "$emacsen" ]; then
     alias emacs="'$emacsen' -nw"
-    local emacsclient=`find ~/Applications -name emacsclient`
+    local emacsclient=`find ~/Applications -name emacsclient | head -n 1`
     alias vemacs="'$emacsclient' -c -n"
     export EDITOR="'$emacsclient' -t"
     export VISUAL="'$emacsclient' -c"
