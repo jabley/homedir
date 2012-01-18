@@ -8,9 +8,10 @@
 # although we only want exactly one result
 emacsen=`find ~/Applications/ -name Emacs | head -n 1`
 if [ -n "$emacsen" ]; then
-    alias emacs="'$emacsen' -nw"
-    local emacsclient=`find ~/Applications -name emacsclient | head -n 1`
-    alias vemacs="'$emacsclient' -c -n"
+    emacsclient=`find ~/Applications -name emacsclient | head -n 1`
+    alias emacsclient="'$emacsclient'"
+    alias emacs="'$emacsclient' -cn"
+    alias vemacs="'$emacsclient' -cn"
     export EDITOR="'$emacsclient' -t"
     export VISUAL="'$emacsclient' -c"
 else
