@@ -27,7 +27,7 @@ pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
 
 hardstatus alwayslastline
 # {=blackGREEN} [ {GREEN} $HOSTNAME {green} ][ <center> {=blackwhite} <if>$BEFORE_WINDOWS</if> {red}({WHITE}$WINDOW_NUMBER*$FLAGS$TITLE<if>($USER)</if>{red}){white}<if>$AFTER_WINDOWS</if> </center> ][ {BLUE}$YEAR-$month-$day {WHITE}HH:MM24 {green}]s
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{B}%Y-%m-%d %{g}]'
+hardstatus string '%{= g}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{B}%Y-%m-%d %{g}]'
 
 # Shortcuts
 bindkey -k F5 next
