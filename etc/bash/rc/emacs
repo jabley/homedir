@@ -8,10 +8,12 @@
 # although we only want exactly one result
 emacsen=`find ~/Applications/ -name Emacs | head -n 1`
 if [ -n "$emacsen" ]; then
+    # make command line Emacs calls call my Emacs
+    alias emacs="$emacsen"
+    # sort out emacsclient so it finds the right client
     emacsclient=`find ~/Applications -name emacsclient | head -n 1`
     alias emacsclient="'$emacsclient'"
-    alias emacs="'$emacsclient' -c -n"
-    alias vemacs="'$emacsclient' -c -n"
+    # Make auto-edit things pop Emacs
     export EDITOR="'$emacsclient' -t"
     export VISUAL="'$emacsclient' -c"
 else
