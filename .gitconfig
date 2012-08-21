@@ -1,0 +1,28 @@
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+#	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	hist = log --pretty=format:\"%h %ai | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	svnup = svn fetch
+	sup = svn fetch
+	svnci = svn dcommit
+	sci = svn dcommmit
+	up = pull --rebase
+	sreb = svn rebase
+	srt = svn rebase remotes/trunk
+	srebt = svn rebase remotes/trunk
+	reb = rebase
+[user]
+	name = James Abley
+	email = james.abley@gmail.com
+[core]
+	autocrlf = input
+	safecrlf = true
+[color]
+	ui = true
+[push]
+	default = current
