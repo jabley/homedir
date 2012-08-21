@@ -1,11 +1,4 @@
-#!/bin/sh
+# this is for OS X, because it doesn't load bashrc on each login, it
+# loads bash_profile.
 
-# bash completion for homebrew
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
-
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-
+[[ $- == *i* ]] && source ~/.bashrc
