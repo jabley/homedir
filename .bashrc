@@ -130,6 +130,11 @@ find_brew
 find_completion
 find_ruby
 
+# local aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 # local changes
 if [ -f ~/.local_bashrc ]; then
     . ~/.local_bashrc
@@ -231,5 +236,7 @@ precmd() {
 }
 
 PROMPT_COMMAND=precmd
+
+prepend_path ~/bin
 
 export PATH
