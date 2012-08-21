@@ -1,4 +1,4 @@
-# /bin/sh
+#!/bin/sh
 alias ll='ls -la'
 # allow sc command for sorting out environment variables for ec2-* commands
 alias set_credentials='`gpg -d ~/credentials.sh.gpg`'
