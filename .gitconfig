@@ -1,20 +1,39 @@
 # -*- mode: conf-unix -*-
+[alias]
+	st = status -sb
+	ci = commit
+	co = checkout
+	br = branch
+#	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	hist = log --pretty=format:\"%h %ai | %s%d [%an]\" --graph --date=short
+        l = log --decorate --name-status
+	type = cat-file -t
+	dump = cat-file -p
+	svnup = svn fetch
+	sup = svn fetch
+	svnci = svn dcommit
+	sci = svn dcommmit
+	up = pull --rebase
+	sreb = svn rebase
+	srt = svn rebase remotes/trunk
+	srebt = svn rebase remotes/trunk
+	reb = rebase
+[user]
+	name = James Abley
+	email = james.abley@gmail.com
+[branch]
+        autosetuprebase = always
+[core]
+	autocrlf = input
+	safecrlf = true
 [color]
+	ui = true
         status = auto
         diff = auto
         branch = auto
         showbranch = auto
-[user]
-        name = Bradley Wright
-        email = brad@intranation.com
-[alias]
-        co = checkout
-        st = status -sb
-        l = log --decorate --name-status
-[branch]
-        autosetuprebase = always
 [push]
-        default = tracking
+	default = current
 # alias some common Git origins/endpoints
 # http://www.kernel.org/pub/software/scm/git/docs/git-clone.html
 [url "git@github.com:"]
