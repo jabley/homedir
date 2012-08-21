@@ -237,4 +237,6 @@ precmd() {
 
 PROMPT_COMMAND=precmd
 
+prepend_path ~/bin
+
 export PATH
