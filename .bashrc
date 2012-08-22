@@ -142,7 +142,9 @@ if [ -f ~/.local_bashrc ]; then
     . ~/.local_bashrc
 fi
 
-
+# application-specific things
+# source all of the scripts in ~/.bashrc.d
+for f in $(ls ~/.bashrc.d/*.bash) ; do . $f; done
 
 # Colours
 txtblk='\[\033[0;30m\]' # Black - Regular
