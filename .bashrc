@@ -46,21 +46,25 @@ append_path() {
 find_emacs() {
     # finds my Emacs install
     if [ $UNAME = Darwin ]; then
-        if [ -d /usr/local/Cellar/emacs ]; then
-            dir="/usr/local/Cellar/emacs"
-            emacsen=$(find "$dir" -name Emacs -type f | head -n 1)
-        fi
-
-        if [ -n "$emacsen" ]; then
-            emacsbin=$(find "$dir" -name emacs -type f | head -n 1)
-
-            if [ ! -e "$emacsbin" ]; then
-                alias emacs="$emacsen"
+        if [ -d /usr/local/Library/LinkedKegs/emacs ]; then
+            prepend_path "/usr/local/Library/LinkedKegs/emacs/bin"
+        else
+            if [ -d /usr/local/Cellar/emacs ]; then
+                dir="/usr/local/Cellar/emacs"
+                emacsen=$(find "$dir" -name Emacs -type f | head -n 1)
             fi
 
-            emacsclient=$(find "$dir" -name emacsclient -type f | head -n 1)
-            emacsdir=$(dirname $emacsclient)
-            prepend_path $emacsdir
+            if [ -n "$emacsen" ]; then
+                emacsbin=$(find "$dir" -name emacs -type f | head -n 1)
+
+                if [ ! -e "$emacsbin" ]; then
+                    alias emacs="$emacsen"
+                fi
+
+                emacsclient=$(find "$dir" -name emacsclient -type f | head -n 1)
+                emacsdir=$(dirname $emacsclient)
+                prepend_path $emacsdir
+            fi
         fi
     fi
 }
