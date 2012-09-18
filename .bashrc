@@ -243,6 +243,8 @@ precmd() {
     esac
 }
 
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 PROMPT_COMMAND=precmd
 
 prepend_path ~/bin
