@@ -4,3 +4,5 @@ alias ll='ls -la'
 alias set_credentials='`gpg -d ~/credentials.sh.gpg`'
 alias sc='set_credentials'
 alias pwgen="tr -dc 'A-Za-z0-9\`~!@#$%^&*()_+[]{}\|;:<>?,./' </dev/urandom | head -c 16 | xargs"
+alias vup="vagrant destroy; export govuk_dev_dist=lucid; vagrant up; ssh dev govuk_puppet; vagrant provision; ssh dev"
+
