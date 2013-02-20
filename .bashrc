@@ -130,11 +130,24 @@ find_ruby() {
     alias be="bundle exec"
 }
 
+find_mvn() {
+    # Check for Homebrew mvn rather than system version. Do it this way for the same
+    # reason that we check for non-system git.
+    if [ -e /usr/local/bin/mvn ]; then
+        mvn=$(readlink /usr/local/bin/mvn)
+        if [ -n "$mvn" ]; then
+            mvndir=$(dirname $mvn)
+            prepend_path "/usr/local/bin/$mvndir"
+        fi
+    fi
+}
+
 find_emacs
 find_git
 find_brew
 find_completion
 find_ruby
+find_mvn
 
 # local aliases
 if [ -f ~/.bash_aliases ]; then
