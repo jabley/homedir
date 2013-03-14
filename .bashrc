@@ -266,4 +266,6 @@ PROMPT_COMMAND=precmd
 
 prepend_path ~/bin
 
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
 export PATH
