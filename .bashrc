@@ -106,8 +106,10 @@ find_completion() {
             echo "Run 'sudo apt-get install bash-completion' to install completion"
         fi
     elif [ $UNAME = "Darwin" ]; then
-        if [ -f `brew --prefix`/etc/bash_completion ]; then
-            . `brew --prefix`/etc/bash_completion
+        if command -v brew > /dev/null; then
+          if [ -f `brew --prefix`/etc/bash_completion ]; then
+              . `brew --prefix`/etc/bash_completion
+          fi
         fi
     fi
 }
