@@ -26,6 +26,7 @@
 [core]
 	autocrlf = input
 	safecrlf = true
+ excludesfile = /opt/boxen/config/git/gitignore
 [color]
 	ui = true
         status = auto
@@ -49,8 +50,11 @@
 [url "git://gist.github.com/"]
         insteadOf = "gist:"
 [credential]
-        helper = osxkeychain
+        helper = /opt/boxen/bin/boxen-git-credential
 # local overrides - git 1.7.10 or higher
 # http://stackoverflow.com/a/9733277
 [include]
     path = ~/.localgitconfig
+
+[hub]
+protocol = https
