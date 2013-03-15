@@ -146,6 +146,8 @@ find_mvn() {
     fi
 }
 
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
 find_emacs
 find_git
 find_brew
@@ -265,7 +267,5 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 PROMPT_COMMAND=precmd
 
 prepend_path ~/bin
-
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 export PATH
