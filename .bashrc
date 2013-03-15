@@ -89,7 +89,7 @@ find_brew() {
     # explicitly put homebrew bin in PATH, as other shells might not
     # find it
     if [ $UNAME = Darwin ]; then
-        if command -v brew; then
+        if command -v brew > /dev/null; then
             brewpath=$(command -v brew)
             brewdir=$(dirname $brewpath)
             append_path $brewdir
