@@ -58,3 +58,4 @@
 
 [hub]
 protocol = https
+host = github.gds
