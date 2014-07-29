@@ -18,6 +18,12 @@
 	srt = svn rebase remotes/trunk
 	srebt = svn rebase remotes/trunk
 	reb = rebase
+	# Delete merged branches.
+	brc = "!f() { \
+		git branch --merged master |\
+		grep -v '^[ *] master$' |\
+		xargs git branch --delete; \
+	}; f"
 [user]
 	name = James Abley
 	email = james.abley@gmail.com
