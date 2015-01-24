@@ -65,3 +65,5 @@
 [hub]
 protocol = https
 host = github.gds
+[rerere]
+	enabled = true
