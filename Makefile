@@ -1,6 +1,6 @@
 SOURCE	:= $(shell pwd)
 TARGET	:= ~
-FILES	:= .bashrc .bash_profile .tmux.conf .gitconfig .ackrc .zshrc .screenrc
+FILES	:= .bashrc .bashrc.d .bash_profile .tmux.conf .gitconfig .ackrc .zshrc .screenrc
 
 all: clean install
 
