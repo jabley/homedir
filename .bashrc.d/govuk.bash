@@ -5,7 +5,6 @@ g() {
 }
 
 # Vagrant VirtualBox choice
-export govuk_dev_dist='precise'
 export VAGRANT_GOVUK_NFS='no'
 
 venv() {
