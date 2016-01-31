@@ -67,3 +67,11 @@ protocol = https
 host = github.gds
 [rerere]
 	enabled = true
+
+# for $deity's sake, check that anything we're getting is complete and sane on a regular basis
+[transfer]
+        fsckobjects = true
+[fetch]
+        fsckobjects = true
+[receive]
+        fsckObjects = true
