@@ -14,5 +14,5 @@ install:
 
 clean:
 	@for f in $(FILES); do \
-		rm -f $(TARGET)/$$f; \
+		rm -rf $(TARGET)/$$f; \
 	done
