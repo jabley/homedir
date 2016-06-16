@@ -39,6 +39,9 @@
         diff = auto
         branch = auto
         showbranch = auto
+[diff]
+	compactionHeuristic = true
+
 [push]
 	default = upstream
 # alias some common Git origins/endpoints
