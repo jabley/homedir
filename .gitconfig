@@ -28,11 +28,11 @@
 	name = James Abley
 	email = james.abley@gmail.com
 [branch]
-        autosetuprebase = always
+    autosetuprebase = always
 [core]
 	autocrlf = input
 	safecrlf = true
- excludesfile = /opt/boxen/config/git/gitignore
+ 	excludesfile = /opt/boxen/config/git/gitignore
 [color]
 	ui = true
         status = auto
