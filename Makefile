@@ -11,8 +11,10 @@ install:
 	@mkdir -p ~/.ssh/
 	@chmod 700 ~/.ssh/
 	@ln -sf $(SOURCE)/.sshrc ~/.ssh/rc
+	@ln -s $(SOURCE)/bin/ ~/bin
 
 clean:
 	@for f in $(FILES); do \
 		rm -rf $(TARGET)/$$f; \
 	done
+	@rm -rf ~/bin
