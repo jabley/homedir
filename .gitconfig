@@ -78,3 +78,5 @@ host = github.gds
         fsckobjects = true
 [receive]
         fsckObjects = true
+[commit]
+	gpgsign = true
