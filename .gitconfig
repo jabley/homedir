@@ -27,6 +27,7 @@
 [user]
 	name = James Abley
 	email = james.abley@gmail.com
+	signingkey = FA2DE7C6
 [branch]
     autosetuprebase = always
 [core]
