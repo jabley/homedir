@@ -1,85 +1,84 @@
 # -*- mode: conf-unix -*-
 [alias]
-	st = status -sb
-	ci = commit
-	co = checkout
-	br = branch
-#	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	hist = log --pretty=format:\"%h %ai | %s%d [%an]\" --graph --date=short
+    st = status -sb
+    ci = commit
+    co = checkout
+    br = branch
+#    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    hist = log --pretty=format:\"%h %ai | %s%d [%an]\" --graph --date=short
         l = log --decorate --name-status
-	type = cat-file -t
-	dump = cat-file -p
-	svnup = svn fetch
-	sup = svn fetch
-	svnci = svn dcommit
-	sci = svn dcommmit
-	up = pull --rebase
-	sreb = svn rebase
-	srt = svn rebase remotes/trunk
-	srebt = svn rebase remotes/trunk
-	reb = rebase
-	# Delete merged branches.
-	brc = "!f() { \
-		git branch --merged master |\
-		grep -v '^[ *] master$' |\
-		xargs git branch --delete; \
-	}; f"
+    type = cat-file -t
+    dump = cat-file -p
+    svnup = svn fetch
+    sup = svn fetch
+    svnci = svn dcommit
+    sci = svn dcommmit
+    up = pull --rebase
+    sreb = svn rebase
+    srt = svn rebase remotes/trunk
+    srebt = svn rebase remotes/trunk
+    reb = rebase
+    # Delete merged branches.
+    brc = "!f() { \
+        git branch --merged master |\
+        grep -v '^[ *] master$' |\
+        xargs git branch --delete; \
+    }; f"
 [user]
-	name = James Abley
-	email = james.abley@gmail.com
-	signingkey = FA2DE7C6
+    name = James Abley
+    email = james.abley@gmail.com
+    signingkey = FA2DE7C6
 [branch]
     autosetuprebase = always
 [core]
-	autocrlf = input
-	safecrlf = true
- 	excludesfile = /opt/boxen/config/git/gitignore
+    autocrlf = input
+    safecrlf = true
+    excludesfile = /opt/boxen/config/git/gitignore
 [color]
-	ui = true
-        status = auto
-        diff = auto
-        branch = auto
-        showbranch = auto
+    ui = true
+    status = auto
+    diff = auto
+    branch = auto
+    showbranch = auto
 [diff]
-	compactionHeuristic = true
-
+    compactionHeuristic = true
 [push]
-	default = upstream
+    default = upstream
 # alias some common Git origins/endpoints
 # http://www.kernel.org/pub/software/scm/git/docs/git-clone.html
 [url "git@github.com:"]
-        insteadOf = "gh:"
-        pushInsteadOf = "github:"
-        pushInsteadOf = "git://github.com/"
+    insteadOf = "gh:"
+    pushInsteadOf = "github:"
+    pushInsteadOf = "git://github.com/"
 [url "git://github.com/"]
-        insteadOf = "github:"
+    insteadOf = "github:"
 [url "git@gist.github.com:"]
-        insteadOf = "gst:"
-        pushInsteadOf = "gist:"
-        pushInsteadOf = "git://gist.github.com/"
+    insteadOf = "gst:"
+    pushInsteadOf = "gist:"
+    pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
-        insteadOf = "gist:"
+    insteadOf = "gist:"
 [credential]
-        helper = /opt/boxen/bin/boxen-git-credential
+    helper = /opt/boxen/bin/boxen-git-credential
 # local overrides - git 1.7.10 or higher
 # http://stackoverflow.com/a/9733277
 [include]
     path = ~/.localgitconfig
 
 [hub]
-protocol = https
-host = github.gds
+    protocol = https
+    host = github.gds
 [rerere]
-	enabled = true
+    enabled = true
 
 # for $deity's sake, check that anything we're getting is complete and sane on a regular basis
 [transfer]
-        fsckobjects = true
+    fsckobjects = true
 [fetch]
-        fsckobjects = true
+    fsckobjects = true
 [receive]
-        fsckObjects = true
+    fsckObjects = true
 [commit]
-	gpgsign = true
+    gpgsign = true
 [url "git://github.com/ghc/packages-"]
-	insteadOf = git://github.com/ghc/packages/
+    insteadOf = git://github.com/ghc/packages/
