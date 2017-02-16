@@ -3,7 +3,7 @@
     st = status -sb
     ci = commit
     co = checkout
-    commend = commit --amend -C HEAD
+    commend = commit --amend -a -C HEAD
     br = branch
 #    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     hist = log --pretty=format:\"%h %ai | %s%d [%an]\" --graph --date=short
