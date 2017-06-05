@@ -1,2 +1,4 @@
 #!/bin/sh
-source ~/.cargo/env
+if [ -f ~/.cargo/env ]; then
+    source ~/.cargo/env
+fi
