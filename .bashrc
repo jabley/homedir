@@ -274,4 +274,6 @@ PERL_MB_OPT="--install_base \"/Users/jabley/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/jabley/perl5"; export PERL_MM_OPT;
 
 ### Added by the Bluemix CLI
-source /usr/local/Bluemix/bx/bash_autocomplete
+if [ -f /usr/local/Bluemix/bx/bash_autocomplete ]; then
+    source /usr/local/Bluemix/bx/bash_autocomplete
+fi

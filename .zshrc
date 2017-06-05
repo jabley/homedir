@@ -120,4 +120,6 @@ find_git
 find_brew
 
 ### Added by the Bluemix CLI
-source /usr/local/Bluemix/bx/zsh_autocomplete
+if [ -f /usr/local/Bluemix/bx/zsh_autocomplete ]; then
+    source /usr/local/Bluemix/bx/zsh_autocomplete
+fi
