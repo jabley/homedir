@@ -1,4 +1,5 @@
 #!/bin/sh
 if [ -f ~/.cargo/env ]; then
-    source ~/.cargo/env
+    # shellcheck source=/dev/null
+    . ~/.cargo/env
 fi

@@ -1,18 +1,19 @@
 #!/usr/bin/env bash
 
 g() {
-  cd ~/govuk/$1*
+  cd "$HOME/govuk/$1*" || true
 }
 
 # Vagrant VirtualBox choice
 export VAGRANT_GOVUK_NFS='no'
 
 venv() {
-  the_env=$(basename `pwd`)
-  if [ ! -d ~/.virtualenvs/$the_env ]; then
-    virtualenv ~/.virtualenvs/$the_env
+  the_env=$(basename "$(pwd)")
+  if [ ! -d "$HOME/.virtualenvs/$the_env" ]; then
+    virtualenv "$HOME/.virtualenvs/$the_env"
   fi
-  source ~/.virtualenvs/$the_env/bin/activate
+  # shellcheck source=/dev/null
+  . "$HOME/.virtualenvs/$the_env/bin/activate"
 }
 
 function vpn {
@@ -40,7 +41,7 @@ function vpn {
             ;;
         status)
             echo "The following openconnect VPNs are connected:"
-            ps auxwww | grep openconnec[t] | awk '{print $NF, "is connected"}'
+            ps auxwww | pgrep openconnec[t] | awk '{print $NF, "is connected"}'
             ;;
         *)
             echo "You need to specify sky/gh/ah/kill/status"
