@@ -1,0 +1,71 @@
+#! /bin/bash
+set -e
+
+usage(){
+	echo "Usage: $(basename "$0") first.jar second.jar"
+	exit 1
+}
+
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    -h|--help)
+    usage
+    ;;
+    *)    # unknown option
+    POSITIONAL+=("$1") # save it in an array for later
+    shift # past argument
+    ;;
+esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+jar1=$1
+jar2=$2
+
+# If we don't have 2 file names, show the usage message
+[[ -z "$jar1" || -z "$jar2" ]] && usage
+
+# check_file path/to/file 
+function check_file() {
+    if [[ ! -r $1 ]]; then
+        echo "No such file <$1>"
+        exit 1
+    fi    
+}
+
+# Do the files exist and are readable? 
+check_file "$jar1"
+check_file "$jar1"
+
+# Get some temp working locations. Works on OSX and Linux.
+firsttmpdir=$(mktemp -d 2>/dev/null || mktemp -d -t 'mytmpdir')
+secondtmpdir=$(mktemp -d 2>/dev/null || mktemp -d -t 'mytmpdir')
+
+# ensure we cleanup the temp working locations
+function cleanup {      
+  rm -rf "$firsttmpdir"
+  rm -rf "$secondtmpdir"
+}
+
+# register the cleanup function to be called on the EXIT signal
+trap cleanup EXIT
+
+# extract_jar path/to/jar temp_dir 
+function extract_jar() {
+    cp "$1" "$2"
+    cd "$2" || exit
+    jarname="$(basename "$1")"
+    jar xf "$jarname"
+    rm "$jarname"
+    cd - > /dev/null || exit
+}
+
+extract_jar "$jar1" "$firsttmpdir"
+extract_jar "$jar2" "$secondtmpdir"
+
+# diff the contents, but replace confusing temp dirs with path/to/jar! to aid understanding 
+diff -r -u "$firsttmpdir" "$secondtmpdir" | sed -e "s#$firsttmpdir#$jar1!#g" -e "s#$secondtmpdir#$jar2!#g"
