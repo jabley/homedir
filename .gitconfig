@@ -87,3 +87,5 @@
     insteadOf = git://github.com/ghc/packages/
 [rebase]
 	autosquash = true
+[http]
+	cookiefile = /Users/jabley/.gitcookies
