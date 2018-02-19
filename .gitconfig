@@ -37,12 +37,18 @@
     autocrlf = input
     safecrlf = true
     excludesfile = /opt/boxen/config/git/gitignore
+    pager = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less
 [color]
     ui = true
     status = auto
     diff = auto
     branch = auto
     showbranch = auto
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 [diff]
     compactionHeuristic = true
 [push]
