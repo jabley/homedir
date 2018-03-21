@@ -270,6 +270,8 @@ prepend_path ~/bin
 
 export PATH
 
+export GIT_DIFF_HIGHLIGHT=$(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight
+
 PERL_MB_OPT="--install_base \"/Users/jabley/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/jabley/perl5"; export PERL_MM_OPT;
 

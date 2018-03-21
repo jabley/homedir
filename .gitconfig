@@ -37,7 +37,7 @@
     autocrlf = input
     safecrlf = true
     excludesfile = /opt/boxen/config/git/gitignore
-    pager = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less
+    pager = $GIT_DIFF_HIGHLIGHT | less
 [color]
     ui = true
     status = auto
