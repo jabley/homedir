@@ -279,3 +279,6 @@ PERL_MM_OPT="INSTALL_BASE=/Users/jabley/perl5"; export PERL_MM_OPT;
 if [ -f /usr/local/Bluemix/bx/bash_autocomplete ]; then
     source /usr/local/Bluemix/bx/bash_autocomplete
 fi
+
+# disable XON/XOFF so that CTRL-S works for interactive forward search of bash history
+stty -ixon
