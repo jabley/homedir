@@ -20,6 +20,10 @@ case $key in
     diff_options+=('-q')
     shift
     ;;
+    -b)
+    diff_options+=('-b')
+    shift
+    ;;
     *)    # unknown option
     POSITIONAL+=("$1") # save it in an array for later
     shift # past argument
