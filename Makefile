@@ -18,3 +18,9 @@ clean:
 		rm -rf $(TARGET)/$$f; \
 	done
 	@rm -rf ~/bin
+
+dry_run:
+	@for f in $(FILES); do \
+	   if [ -e $(TARGET)/$$f ]; then echo "$(TARGET)/$$f will be removed"; fi \
+    done
+	@if [ -d ~/bin ]; then echo "~/bin will be removed"; fi
