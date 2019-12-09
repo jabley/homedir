@@ -1,5 +1,5 @@
 #!/bin/sh
-export GOPATH=~/gocode
+export GOPATH=~/go
 export PATH="$PATH:$GOPATH/bin"
 # Add the GOROOT-based install location to your PATH so that `godoc` and
 # `go vet` will work
