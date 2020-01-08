@@ -2,3 +2,5 @@
 # loads bash_profile.
 
 [[ $- == *i* ]] && source ~/.bashrc
+
+export PATH="$HOME/.cargo/bin:$PATH"
