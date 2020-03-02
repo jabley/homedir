@@ -1,12 +1,16 @@
 #! /bin/bash
 
-# Recursively find and fetch git repos. Requires (GNU) parallel to run
+# Recursively find and fetch git repos. Merges master if that's the current branch.
+# Requires (GNU) parallel to run
 
 CUR_DIR=$(pwd);
 
 function fetch() {
    pushd "$(dirname "$CUR_DIR/$1")" > /dev/null || return
    git fetch --prune
+   if [ "$(git rev-parse --abbrev-ref HEAD)" == "master" ] && [ "$(git remote | wc -l)" -ne 0 ] ; then
+      git merge 1> /dev/null || echo "$1"
+   fi
 }
 
 export -f fetch
