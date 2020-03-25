@@ -7,7 +7,7 @@ CUR_DIR=$(pwd);
 
 function fetch() {
    pushd "$(dirname "$CUR_DIR/$1")" > /dev/null || return
-   git fetch --prune
+   git fetch --prune || echo "Unable to fetch from $(git remote -v)"
    if [ "$(git rev-parse --abbrev-ref HEAD)" == "master" ] && [ "$(git remote | wc -l)" -ne 0 ] ; then
       git merge 1> /dev/null || echo "$1"
    fi
