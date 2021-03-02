@@ -15,6 +15,6 @@ function fetch() {
 
 export -f fetch
 
-find "$CUR_DIR" -name .git -type d | parallel -a - fetch
+find "$CUR_DIR" -name .git -type d | parallel -j 3 -a - fetch
 
 date +%Y-%m-%dT%H:%M:%S%z
