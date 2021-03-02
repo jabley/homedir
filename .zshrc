@@ -13,7 +13,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-export EDITOR="emacsclient -nw"
+export EDITOR="code -w"
 export VISUAL="$EDITOR"
 export TERM='xterm-256color'
 
