@@ -12,7 +12,9 @@ function fetch() {
       return
    fi
    git fetch --prune || echo "Unable to fetch from $(git remote -v)"
-   if [ "$(git rev-parse --abbrev-ref HEAD)" == "master" ] && [ "$(git remote | wc -l)" -ne 0 ] ; then
+   if [ "$(git rev-parse --abbrev-ref HEAD)" = "main" ] && [ "$(git remote | wc -l)" -ne 0 ] ; then
+      git merge 1> /dev/null || echo "$1"
+   elif [ "$(git rev-parse --abbrev-ref HEAD)" = "master" ] && [ "$(git remote | wc -l)" -ne 0 ] ; then
       git merge 1> /dev/null || echo "$1"
    fi
 }
