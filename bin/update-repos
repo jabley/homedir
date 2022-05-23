@@ -7,6 +7,10 @@ CUR_DIR=$(pwd);
 
 function fetch() {
    pushd "$(dirname "$CUR_DIR/$1")" > /dev/null || return
+   # if there are no commits in this directory, then bail early
+   if [ "$(git rev-list -n 1 --all | wc -l)" -eq 0 ] ; then
+      return
+   fi
    git fetch --prune || echo "Unable to fetch from $(git remote -v)"
    if [ "$(git rev-parse --abbrev-ref HEAD)" == "master" ] && [ "$(git remote | wc -l)" -ne 0 ] ; then
       git merge 1> /dev/null || echo "$1"
