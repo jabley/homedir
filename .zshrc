@@ -134,3 +134,6 @@ append_path ~/bin
 # and https://coderwall.com/p/nl-bdg/more-readable-git-word-diff-on-osx
 GIT_DIFF_HIGHLIGHT="$(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight"
 export GIT_DIFF_HIGHLIGHT
+
+# local aliases
+alias ll='ls -la'
