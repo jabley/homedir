@@ -122,9 +122,9 @@ PS2="%F{$prompt_fg}%K{$prompt_bg}${PS2}%f%k"
 PS3="%F{$prompt_fg}%K{$prompt_bg}${PS3}%f%k"
 PS4="%F{$prompt_fg}%K{$prompt_bg}${PS4}%f%k"
 
-find_emacs
-find_git
-find_brew
+# find_emacs
+# find_git
+# find_brew
 
 ### Added by the Bluemix CLI
 if [ -f /usr/local/Bluemix/bx/zsh_autocomplete ]; then
