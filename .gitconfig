@@ -32,7 +32,6 @@
 [core]
     autocrlf = input
     safecrlf = true
-    excludesfile = /opt/boxen/config/git/gitignore
     pager = $GIT_DIFF_HIGHLIGHT | less
 [color]
     ui = true
@@ -63,8 +62,6 @@
     pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
     insteadOf = "gist:"
-[credential]
-    helper = /opt/boxen/bin/boxen-git-credential
 # local overrides - git 1.7.10 or higher
 # http://stackoverflow.com/a/9733277
 [include]
