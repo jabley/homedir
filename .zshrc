@@ -125,8 +125,3 @@ PS4="%F{$prompt_fg}%K{$prompt_bg}${PS4}%f%k"
 # find_emacs
 # find_git
 # find_brew
-
-### Added by the Bluemix CLI
-if [ -f /usr/local/Bluemix/bx/zsh_autocomplete ]; then
-    source /usr/local/Bluemix/bx/zsh_autocomplete
-fi
