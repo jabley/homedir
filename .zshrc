@@ -28,21 +28,21 @@ export TERM='xterm-256color'
 # TODO: abstract "in path" out to a function
 prepend_path() {
     to_add=$1
-    if [ -d $to_add ]; then
-        export PATH=$to_add:$PATH
+    if [ -d "$to_add" ]; then
+        export PATH="$to_add:$PATH"
     fi
 }
 
 append_path() {
     to_add=$1
-    if [ -d $to_add ]; then
-        export PATH=$PATH:$to_add
+    if [ -d "$to_add" ]; then
+        export PATH="$PATH:$to_add"
     fi
 }
 
 find_emacs() {
     # finds my Emacs install
-    if [ `uname` = "Darwin" ]; then
+    if [ "$(uname)" = "Darwin" ]; then
         if [ -d /usr/local/Cellar/emacs ]; then
             dir="/usr/local/Cellar/emacs"
             emacsen=$(find "$dir" -name Emacs -type f | head -n 1)
@@ -68,8 +68,8 @@ find_git() {
     # do something, XCode's Git ends up before my custom one in the
     # path.
     if [ -e /usr/local/bin/git ]; then
-        git=$(readlink /usr/local/bin/git)
-        gitdir=$(dirname $git)
+        git="$(readlink /usr/local/bin/git)"
+        gitdir="$(dirname "$git")"
         prepend_path "/usr/local/bin/$gitdir"
     fi
 }
@@ -77,10 +77,10 @@ find_git() {
 find_brew() {
     # explicitly put homebrew bin in PATH, as other shells might not
     # find it
-    if [ `uname` = "Darwin" ]; then
+    if [ "$(uname)" = "Darwin" ]; then
         brewpath=$(command -v brew)
-        brewdir=$(dirname $brewpath)
-        append_path $brewdir
+        brewdir="$(dirname "$brewpath")"
+        append_path "$brewdir"
     fi
 }
 
@@ -93,10 +93,10 @@ precmd() {
 
     # my Tmux config has the host already, so we can hide it from the
     # prompt.
-    if [ $TMUX_PANE ]; then
+    if [ "$TMUX_PANE" ]; then
         PS1=" "
     else
-        if [ $SSH_CONNECTION ]; then
+        if [ "$SSH_CONNECTION" ]; then
             PS1="%F{red}%m "
         else
             PS1="%F{magenta}%m "
@@ -109,7 +109,7 @@ precmd() {
         PS1="%F{black}%K{yellow} $(git branch --no-color | grep '^*' | cut -d ' ' -f 2-) ${clr} ${PS1}"
     fi
 
-    if [ $RUBY_VERSION ]; then
+    if [ "$RUBY_VERSION" ]; then
         PS1="%F{black}%K{red} ${RUBY_VERSION} ${clr} ${PS1}"
     fi
 
