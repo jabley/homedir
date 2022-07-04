@@ -1,5 +1,12 @@
 # Most of this borrowed from:
 # https://github.com/threedaymonk/config/blob/master/zshrc
+if type brew &>/dev/null; then
+    FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
+
+    autoload -Uz compinit
+    compinit
+fi
+
 autoload -Uz colors; colors
 
 # Prefer Emacs keybindings
