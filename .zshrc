@@ -128,3 +128,9 @@ PS4="%F{$prompt_fg}%K{$prompt_bg}${PS4}%f%k"
 
 # Ensure that my custom tools are available
 append_path ~/bin
+
+# Use git diff-highlight
+# See https://www.viget.com/articles/dress-up-your-git-diffs-with-word-level-highlights/
+# and https://coderwall.com/p/nl-bdg/more-readable-git-word-diff-on-osx
+GIT_DIFF_HIGHLIGHT="$(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight"
+export GIT_DIFF_HIGHLIGHT
