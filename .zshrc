@@ -52,12 +52,12 @@ find_emacs() {
             emacsbin=$(find "$dir" -name emacs -type f | head -n 1)
 
             if [ ! -e "$emacsbin" ]; then
-                alias emacs="$emacsen"
+                alias emacs='$emacsen'
             fi
 
-            emacsclient=$(find "$dir" -name emacsclient -type f | head -n 1)
-            emacsdir=$(dirname $emacsclient)
-            prepend_path $emacsdir
+            emacsclient="$(find "$dir" -name emacsclient -type f | head -n 1)"
+            emacsdir="$(dirname "$emacsclient")"
+            prepend_path "$emacsdir"
         fi
     fi
 }
