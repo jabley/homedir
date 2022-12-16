@@ -23,6 +23,7 @@
     brc = "!f() { git branch --merged master | grep -v '^[ *] master$' | xargs git branch --delete; }; f"
     oldest-ancestor = !bash -c 'diff -u <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | sed -ne \"s/^ //p\" | head -1' -
     branch-created = !bash -c 'git show --format="%ai" $(git oldest-ancestor \"${1}\" master)' -
+    change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
 [user]
     name = James Abley
     email = james.abley@gmail.com
