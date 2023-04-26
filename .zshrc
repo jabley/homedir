@@ -137,3 +137,4 @@ export GIT_DIFF_HIGHLIGHT
 
 # local aliases
 alias ll='ls -la'
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
