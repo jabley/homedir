@@ -30,14 +30,7 @@
     pf = push --force-with-lease
     type = cat-file -t
     dump = cat-file -p
-    svnup = svn fetch
-    sup = svn fetch
-    svnci = svn dcommit
-    sci = svn dcommmit
     up = pull --rebase
-    sreb = svn rebase
-    srt = svn rebase remotes/trunk
-    srebt = svn rebase remotes/trunk
     reb = rebase
     # Delete merged branches.
     brc = "!f() { git branch --merged master | grep -v '^[ *] master$' | xargs git branch --delete; }; f"
