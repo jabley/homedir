@@ -138,3 +138,6 @@ export GIT_DIFF_HIGHLIGHT
 # local aliases
 alias ll='ls -la'
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
+
+# James Coglan. Building Git (Kindle Locations 1048-1051). Kindle Edition. 
+alias inflate='ruby -r zlib -e "STDOUT.write Zlib::Inflate.inflate(STDIN.read)"'
