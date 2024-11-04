@@ -101,6 +101,7 @@
 [rebase]
 	autosquash = true
 	updateRefs = true
+	updateRefs = true
 [http]
 	cookiefile = /Users/jabley/.gitcookies
 [filter "lfs"]
