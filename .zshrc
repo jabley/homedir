@@ -141,3 +141,6 @@ alias ibrew='arch -x86_64 /usr/local/bin/brew'
 
 # James Coglan. Building Git (Kindle Locations 1048-1051). Kindle Edition. 
 alias inflate='ruby -r zlib -e "STDOUT.write Zlib::Inflate.inflate(STDIN.read)"'
+
+# opam configuration
+[[ ! -r /Users/jabley/.opam/opam-init/init.zsh ]] || source /Users/jabley/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
