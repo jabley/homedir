@@ -40,7 +40,7 @@
 [user]
     name = James Abley
     email = james.abley@gmail.com
-    signingkey = FA2DE7C6
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINEenK/qFRZ+RxdolCuZ+SKYobqqVggKWrlZh0Ytbsyn
 [branch]
     autosetuprebase = always
 [core]
@@ -95,7 +95,7 @@
 [receive]
     fsckObjects = true
 [commit]
-    # gpgsign = true
+    gpgsign = true
 [url "git://github.com/ghc/packages-"]
     insteadOf = git://github.com/ghc/packages/
 [rebase]
@@ -113,3 +113,7 @@
 	defaultBranch = main
 [merge]
 	conflictstyle = diff3
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
