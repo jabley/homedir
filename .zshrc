@@ -23,6 +23,7 @@ HISTFILE=~/.zsh_history
 export EDITOR="code -w"
 export VISUAL="$EDITOR"
 export TERM='xterm-256color'
+export GPG_TTY=$(tty)
 
 # Add directory to PATH if it exists and is not already there.
 # TODO: abstract "in path" out to a function
