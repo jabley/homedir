@@ -5,6 +5,9 @@ if type brew &>/dev/null; then
 
     autoload -Uz compinit
     compinit
+    if type jj &>/dev/null; then
+        source <(jj util completion zsh)
+    fi
 fi
 
 autoload -Uz colors; colors
