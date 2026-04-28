@@ -1,6 +1,7 @@
 # Most of this borrowed from:
 # https://github.com/threedaymonk/config/blob/master/zshrc
 if type brew &>/dev/null; then
+    eval "$(brew shellenv)"
     FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
 
     autoload -Uz compinit
