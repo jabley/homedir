@@ -9,6 +9,7 @@ if type brew &>/dev/null; then
     if type jj &>/dev/null; then
         source <(jj util completion zsh)
     fi
+    export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fi
 
 autoload -Uz colors; colors
