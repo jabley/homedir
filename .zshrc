@@ -30,6 +30,12 @@ export VISUAL="$EDITOR"
 export TERM='xterm-256color'
 export GPG_TTY=$(tty)
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
 # Add directory to PATH if it exists and is not already there.
 # TODO: abstract "in path" out to a function
 prepend_path() {
