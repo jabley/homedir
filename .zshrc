@@ -156,3 +156,4 @@ alias inflate='ruby -r zlib -e "STDOUT.write Zlib::Inflate.inflate(STDIN.read)"'
 
 # opam configuration
 [[ ! -r /Users/jabley/.opam/opam-init/init.zsh ]] || source /Users/jabley/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
